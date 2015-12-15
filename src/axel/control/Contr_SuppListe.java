@@ -12,7 +12,7 @@ import java.util.ArrayList;
 /**
  * Created by axell on 01/12/15.
  */
-public class Contr_SuppListe extends AbstractControleur{
+public class Contr_SuppListe extends AbstractControleur {
 
     private Vue_Liste view;
 
@@ -23,7 +23,7 @@ public class Contr_SuppListe extends AbstractControleur{
 
     @Override
     public void control(ArrayList<String> list) {
-        if(list!=null) {
+        if (list != null) {
             String all_etu = "";
             Etudiant etu;
             for (int i = 0; i < list.size(); i++) {
@@ -32,12 +32,24 @@ public class Contr_SuppListe extends AbstractControleur{
                 all_etu += etu + "\n";
             }
             if (list.size() < 2) {
-                JOptionPane.showMessageDialog(view, "L'étudiant :\n" + all_etu + " a été supprimé.");
+                System.out.println("L'étudiant :\n" + all_etu + " a été supprimé.");
+                JOptionPane.showMessageDialog(view,
+                        "L'étudiant :\n" + all_etu + " a été supprimé.",
+                        "Information",
+                        JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(view, "Les étudiants :\n" + all_etu + "ont été supprimés.");
+                System.out.println("Les étudiants :\n" + all_etu + "ont été supprimés.");
+                JOptionPane.showMessageDialog(view,
+                        "Les étudiants :\n" + all_etu + "ont été supprimés.",
+                        "Information",
+                        JOptionPane.INFORMATION_MESSAGE);
             }
-        }else {
-            JOptionPane.showMessageDialog(view, "Aucun étudiant n'a été selectionné.");
+        } else {
+            System.out.println("Aucun étudiant n'a été selectionné.");
+            JOptionPane.showMessageDialog(view,
+                    "Aucun étudiant n'a été selectionné.",
+                    "Attention",
+                    JOptionPane.WARNING_MESSAGE);
         }
 
     }

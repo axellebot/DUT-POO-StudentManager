@@ -28,9 +28,7 @@ public class Vue_Liste extends JInternalFrame implements Observateur {
     private JButton btnDelete;
 
     public Vue_Liste(Promotion promotion) {
-        setTitle("Liste");
-        setResizable(true);
-        setVisible(true);
+        super("Liste",true,true,true,true);
 
         this.promotion = promotion;
 
@@ -68,6 +66,9 @@ public class Vue_Liste extends JInternalFrame implements Observateur {
 
         //ajout en tant que observateur
         this.promotion.addObservateur(this);
+
+        //Rendre visible
+        setVisible(true);
     }
 
     @Override

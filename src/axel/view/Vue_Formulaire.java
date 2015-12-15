@@ -30,12 +30,12 @@ public class Vue_Formulaire extends JInternalFrame {
 
 
     public Vue_Formulaire(Promotion promotion) {
+        super("Form",true,true,true,true);
+
         this.promotion = promotion;
 
-        setTitle("Form");
         //setPreferredSize(new Dimension(500,100));
         pack();
-        setResizable(true);
         setVisible(true);
 
         //labels
@@ -139,6 +139,9 @@ public class Vue_Formulaire extends JInternalFrame {
         //initialisation controlleur
         this.control_ajout=new Contr_AjoutForm(this.promotion,this);
         this.control_supp = new Contr_SuppForm(this.promotion,this);
+
+        //Rendre visible
+        setVisible(true);
     }
 
     private class Ecouteur_Ajout implements ActionListener {

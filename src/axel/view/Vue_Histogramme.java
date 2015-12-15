@@ -32,10 +32,7 @@ public class Vue_Histogramme extends JInternalFrame implements Observateur {
     static final String bacs[] = {"S", "ES", "STI", "STG", "Etranger", "Autre"};
 
     public Vue_Histogramme(Promotion promotion) {
-        setTitle("Histogramme");
-        //setPreferredSize(new Dimension(200,200));
-        setResizable(true);
-        setVisible(true);
+        super("Histogramme",true,true,true,true);
 
         this.promotion = promotion;
 
@@ -53,6 +50,9 @@ public class Vue_Histogramme extends JInternalFrame implements Observateur {
 
         //ajout en tant que observateur
         this.promotion.addObservateur(this);
+
+        //Rendre visible
+        setVisible(true);
     }
 
     @Override

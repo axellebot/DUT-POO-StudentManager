@@ -26,10 +26,8 @@ public class Vue_Camembert extends JInternalFrame implements Observateur {
     private Camembert camembert;
 
     public Vue_Camembert(Promotion promotion) {
-        setTitle("Départements d'origine");
-        //setPreferredSize(new Dimension(100,100));
-        setResizable(true);
-        setVisible(true);
+        super("Départements d'origine",true,true,true,true);
+        this.setBounds(0,0,250,250);
 
         this.promotion = promotion;
 
@@ -47,6 +45,9 @@ public class Vue_Camembert extends JInternalFrame implements Observateur {
 
         //ajout en tant que observateur
         this.promotion.addObservateur(this);
+
+        //Rendre visible
+        setVisible(true);
     }
 
     @Override

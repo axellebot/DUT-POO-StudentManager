@@ -22,16 +22,38 @@ public class Contr_SuppForm extends AbstractControleur {
 
     @Override
     public void control(ArrayList<String> list) {
-        if(!list.get(0).isEmpty()) {
-            Etudiant etu = promotion.searchEtudiant(list.get(0));
-            if(etu!=null) {
-                promotion.removeEtudiant(etu);
-                JOptionPane.showMessageDialog(view, "L'étudiant '" + etu + "' a été supprimé.");
-            }else{
-                JOptionPane.showMessageDialog(view, "L'étudiant n'existe pas.");
+        if (!list.get(0).isEmpty()) {
+            try {
+                int _tmp = Integer.parseInt(list.get(0));
+                Etudiant etu = promotion.searchEtudiant(list.get(0));
+                if (etu != null) {
+                    promotion.removeEtudiant(etu);
+                    JOptionPane.showMessageDialog(view,
+                            "L'étudiant '" + etu + "' a été supprimé.",
+                            "Information",
+                            JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(view,
+                            "L'étudiant n'existe pas.",
+                            "Erreur",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Le numéro saisit n'est pas un nombre.\n");
+                JOptionPane.showMessageDialog(view,
+                        "Le numéro saisit n'est pas un nombre.",
+                        "Inane error",
+                        JOptionPane.ERROR_MESSAGE);
+
             }
-        }else {
-            JOptionPane.showMessageDialog(view, "Le champ est vide.");
+        } else
+
+        {
+            System.out.println("Le champ est vide.\n");
+            JOptionPane.showMessageDialog(view,
+                    "Le champ est vide.",
+                    "Attention",
+                    JOptionPane.WARNING_MESSAGE);
         }
     }
 }
