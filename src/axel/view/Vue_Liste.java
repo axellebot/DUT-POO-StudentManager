@@ -29,7 +29,6 @@ public class Vue_Liste extends JInternalFrame implements Observateur {
 
     public Vue_Liste(Promotion promotion) {
         setTitle("Liste");
-        //setPreferredSize(new Dimension(100, 500));
         setResizable(true);
         setVisible(true);
 
@@ -45,17 +44,21 @@ public class Vue_Liste extends JInternalFrame implements Observateur {
 
 
         //Layout
-        GridBagLayout layout = new GridBagLayout();
-        this.setLayout(layout);
+        this.setLayout(new GridBagLayout());
+
+        //Constraint
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.gridx = 0;
-        gbc.gridy = 0;//gbc.gridwidth=1;gbc.gridheight=1;
+        gbc.gridheight = gbc.gridwidth = 1;
+        gbc.weightx = gbc.weighty = 1;
+        gbc.gridx = gbc.gridy = 0;
 
         //ajout à la fenetre
+        gbc.weighty = 50;
         add(scrollPanel, gbc);
         gbc.gridx = 0;
         gbc.gridy = 1;
+        gbc.weighty = 1;
         add(btnDelete, gbc);
 
         //ajout Listener
@@ -89,9 +92,9 @@ public class Vue_Liste extends JInternalFrame implements Observateur {
                     String _id = ((Etudiant) _indices[i]).getId();
                     listString.add(_id);
                 }
-                if(listString.size()>0){
-                control_supp.control(listString);}
-                else{
+                if (listString.size() > 0) {
+                    control_supp.control(listString);
+                } else {
                     control_supp.control(null);
                 }
             }

@@ -76,12 +76,14 @@ public class Vue_Formulaire extends JInternalFrame {
 
 
         //Layout
-        GridBagLayout layout = new GridBagLayout();
-        this.setLayout(layout);
+        this.setLayout(new GridBagLayout());
+
+        //Constraint
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.gridx = 0;
-        gbc.gridy = 0;
+        gbc.gridheight=gbc.gridwidth=1;
+        gbc.weightx=gbc.weighty=1;
+        gbc.gridx=gbc.gridy=0;
 
         //ajout à la fenetre
         add(lblAdd, gbc);

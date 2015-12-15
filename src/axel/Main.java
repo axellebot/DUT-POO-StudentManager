@@ -13,6 +13,15 @@ public class Main {
         Promotion promotion=new Promotion();
         promotion.loadFileCSV();
 
+
+
+        //UserInterface
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {
+
+        }
+
         //IHM
          Vue_Principal _fenetre = new Vue_Principal(promotion);
         _fenetre.pack();
