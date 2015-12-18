@@ -10,18 +10,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Vector;
 
 /**
  * Created by axell on 01/12/15.
  */
 public class Vue_Liste extends JInternalFrame implements Observateur {
-    private Promotion promotion;
-
     // Controleurs
     Contr_SuppListe control_supp;
-
+    private Promotion promotion;
     // Components
     private JScrollPane scrollPanel;
     private JList listbox;
