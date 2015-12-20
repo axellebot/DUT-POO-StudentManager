@@ -13,26 +13,23 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.BarRenderer3D;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.general.DatasetUtilities;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 /**
  * Created by axell on 01/12/15.
  */
 public class Vue_Histogramme extends JInternalFrame implements Observateur {
+    static final String bacs[] = {"S", "ES", "STI", "STG", "Etranger", "Autre"};
     private Promotion promotion;
     private Histogramme histogramme;
-    static final String bacs[] = {"S", "ES", "STI", "STG", "Etranger", "Autre"};
 
     public Vue_Histogramme(Promotion promotion) {
-        super("Histogramme",true,true,true,true);
+        super("Histogramme", true, true, true, true);
 
         this.promotion = promotion;
 
@@ -70,18 +67,12 @@ public class Vue_Histogramme extends JInternalFrame implements Observateur {
         this.repaint();
     }
 
-    private class Histogramme extends ChartPanel {
-        public Histogramme(JFreeChart chart) {
-            super(chart);
-        }
-    }
-
     private CategoryDataset createDataset(Promotion promotion) {
 
         Map<String, List<Etudiant>> map = new LinkedHashMap<>();
 
-        for(Etudiant etudiant : promotion.getListeEtudiants()){
-            if(map.containsKey(etudiant.getSerieBac())){
+        for (Etudiant etudiant : promotion.getListeEtudiants()) {
+            if (map.containsKey(etudiant.getSerieBac())) {
                 List<Etudiant> etudiants = map.get(etudiant.getSerieBac());
                 etudiants.add(etudiant);
             } else {
@@ -93,8 +84,8 @@ public class Vue_Histogramme extends JInternalFrame implements Observateur {
 
         DefaultCategoryDataset defaultCategoryDataset = new DefaultCategoryDataset();
 
-        for(int i = 0; i < bacs.length; i++){
-            if(map.containsKey(bacs[i])){
+        for (int i = 0; i < bacs.length; i++) {
+            if (map.containsKey(bacs[i])) {
                 defaultCategoryDataset.addValue(map.get(bacs[i]).size(), bacs[i], "");
             } else {
                 defaultCategoryDataset.addValue(0, bacs[i], "");
@@ -138,6 +129,12 @@ public class Vue_Histogramme extends JInternalFrame implements Observateur {
         renderer.setDrawBarOutline(false);
 
         return chart;
+    }
+
+    private class Histogramme extends ChartPanel {
+        public Histogramme(JFreeChart chart) {
+            super(chart);
+        }
     }
 }
 

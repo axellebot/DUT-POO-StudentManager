@@ -24,7 +24,7 @@ public class Vue_Liste extends JInternalFrame implements Observateur {
     private JButton btnDelete;
 
     public Vue_Liste(Promotion promotion) {
-        super("Liste",true,true,true,true);
+        super("Liste", true, true, true, true);
 
         this.promotion = promotion;
 

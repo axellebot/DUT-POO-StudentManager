@@ -7,11 +7,10 @@ package axel.model;
 import java.io.Serializable;
 
 /**
- *
  * @author Effantin
  */
-public class Etudiant implements Serializable{
-    private String id,nom,prenom,serieBac,dpt;
+public class Etudiant implements Serializable {
+    private String id, nom, prenom, serieBac, dpt;
 
     public Etudiant(String id, String nom, String prenom, String serieBac, String dpt) {
         this.id = id;
@@ -61,8 +60,8 @@ public class Etudiant implements Serializable{
         this.serieBac = serieBac;
     }
 
-    public String toString(){
-        return getId()+" - "+getNom()+"  " +getPrenom()+"  ("+getDpt()+")";
+    public String toString() {
+        return getId() + " - " + getNom() + "  " + getPrenom() + "  (" + getDpt() + ")";
     }
-    
+
 }

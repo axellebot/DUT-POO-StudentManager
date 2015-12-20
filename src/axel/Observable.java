@@ -5,6 +5,8 @@ package axel;
  */
 public interface Observable {
     void addObservateur(Observateur observateur);
+
     void removeObservateur(Observateur observateur);
+
     void notifyObservateur();
 }

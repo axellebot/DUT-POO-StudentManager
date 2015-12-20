@@ -2,8 +2,6 @@ package axel.view;
 
 import axel.control.Contr_AjoutForm;
 import axel.control.Contr_SuppForm;
-import axel.control.Contr_SuppListe;
-import axel.model.Etudiant;
 import axel.model.Promotion;
 
 import javax.swing.*;
@@ -30,7 +28,7 @@ public class Vue_Formulaire extends JInternalFrame {
 
 
     public Vue_Formulaire(Promotion promotion) {
-        super("Form",true,true,true,true);
+        super("Form", true, true, true, true);
 
         this.promotion = promotion;
 
@@ -81,9 +79,9 @@ public class Vue_Formulaire extends JInternalFrame {
         //Constraint
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.gridheight=gbc.gridwidth=1;
-        gbc.weightx=gbc.weighty=1;
-        gbc.gridx=gbc.gridy=0;
+        gbc.gridheight = gbc.gridwidth = 1;
+        gbc.weightx = gbc.weighty = 1;
+        gbc.gridx = gbc.gridy = 0;
 
         //ajout à la fenetre
         add(lblAdd, gbc);
@@ -137,8 +135,8 @@ public class Vue_Formulaire extends JInternalFrame {
         btnDelete.addActionListener(new Ecouteur_Suppr1());
 
         //initialisation controlleur
-        this.control_ajout=new Contr_AjoutForm(this.promotion,this);
-        this.control_supp = new Contr_SuppForm(this.promotion,this);
+        this.control_ajout = new Contr_AjoutForm(this.promotion, this);
+        this.control_supp = new Contr_SuppForm(this.promotion, this);
 
         //Rendre visible
         setVisible(true);

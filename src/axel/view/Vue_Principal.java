@@ -35,14 +35,34 @@ public class Vue_Principal extends JFrame {
         //Constraint
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.gridheight=gbc.gridwidth=1;
-        gbc.weightx=gbc.weighty=1;
-        gbc.gridx=gbc.gridy=0;
+        gbc.gridheight = gbc.gridwidth = 1;
+        gbc.weightx = gbc.weighty = 1;
+        gbc.gridx = gbc.gridy = 0;
 
-        gbc.gridx=0;gbc.gridy=0;gbc.gridwidth=3;gbc.gridheight=1;this.add(vue_formulaire,gbc);
-        gbc.gridx=0;gbc.gridy=1;gbc.gridwidth=2;gbc.gridheight=1;gbc.weighty=2;gbc.weightx=2;this.add(vue_camembert,gbc);gbc.weightx=1;
-        gbc.gridx=2;gbc.gridy=1;gbc.gridwidth=1;gbc.gridheight=1;this.add(vue_histogramme,gbc);
-        gbc.gridx=3;gbc.gridy=0;gbc.gridwidth=1;gbc.gridheight=2;gbc.weighty=2;this.add(vue_liste,gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 3;
+        gbc.gridheight = 1;
+        this.add(vue_formulaire, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        gbc.gridheight = 1;
+        gbc.weighty = 2;
+        gbc.weightx = 2;
+        this.add(vue_camembert, gbc);
+        gbc.weightx = 1;
+        gbc.gridx = 2;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        this.add(vue_histogramme, gbc);
+        gbc.gridx = 3;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 2;
+        gbc.weighty = 2;
+        this.add(vue_liste, gbc);
 
         //ajout à la fenetre sans les contraintes
         /*

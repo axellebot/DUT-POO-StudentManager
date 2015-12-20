@@ -3,7 +3,6 @@ package axel.control;
 import axel.model.Etudiant;
 import axel.model.Promotion;
 import axel.view.Vue_Formulaire;
-import axel.view.Vue_Principal;
 
 import javax.swing.*;
 import java.util.ArrayList;

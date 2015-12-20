@@ -1,7 +1,6 @@
 package axel.control;
 
 import axel.model.Promotion;
-import axel.view.Vue_Principal;
 
 import java.util.ArrayList;
 
@@ -10,6 +9,7 @@ import java.util.ArrayList;
  */
 public abstract class AbstractControleur {
     protected Promotion promotion;
+
     abstract public void control(ArrayList<String> list);
 
 

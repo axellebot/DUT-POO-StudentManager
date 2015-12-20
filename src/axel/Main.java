@@ -10,9 +10,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Promotion promotion=new Promotion();
+        Promotion promotion = new Promotion();
         promotion.loadFileCSV();
-
 
 
         //UserInterface
@@ -23,7 +22,7 @@ public class Main {
         }
 
         //IHM
-         Vue_Principal _fenetre = new Vue_Principal(promotion);
+        Vue_Principal _fenetre = new Vue_Principal(promotion);
         _fenetre.pack();
         RefineryUtilities.centerFrameOnScreen(_fenetre);
         _fenetre.setVisible(true);

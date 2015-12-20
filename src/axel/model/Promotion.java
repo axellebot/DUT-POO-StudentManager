@@ -7,16 +7,12 @@ package axel.model;
 import axel.Observable;
 import axel.Observateur;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
-import javax.swing.JFileChooser;
 
 
 /**
@@ -118,7 +114,7 @@ public class Promotion implements Observable {
 
     @Override
     public void notifyObservateur() {
-        for(int i = 0;i<this.listObservateur.size();i++){
+        for (int i = 0; i < this.listObservateur.size(); i++) {
             listObservateur.get(i).update();
         }
     }

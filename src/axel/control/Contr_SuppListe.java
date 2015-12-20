@@ -1,10 +1,8 @@
 package axel.control;
 
-import axel.Observateur;
 import axel.model.Etudiant;
 import axel.model.Promotion;
 import axel.view.Vue_Liste;
-import axel.view.Vue_Principal;
 
 import javax.swing.*;
 import java.util.ArrayList;

@@ -7,14 +7,11 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot3D;
-import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.util.Rotation;
-import sun.util.resources.cldr.ms.CalendarData_ms_BN;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -26,8 +23,8 @@ public class Vue_Camembert extends JInternalFrame implements Observateur {
     private Camembert camembert;
 
     public Vue_Camembert(Promotion promotion) {
-        super("Départements d'origine",true,true,true,true);
-        this.setBounds(0,0,250,250);
+        super("Départements d'origine", true, true, true, true);
+        this.setBounds(0, 0, 250, 250);
 
         this.promotion = promotion;
 
@@ -64,12 +61,6 @@ public class Vue_Camembert extends JInternalFrame implements Observateur {
 
         this.revalidate();
         this.repaint();
-    }
-
-    private class Camembert extends ChartPanel {
-        public Camembert(JFreeChart chart) {
-            super(chart);
-        }
     }
 
     /**
@@ -138,6 +129,12 @@ public class Vue_Camembert extends JInternalFrame implements Observateur {
         plot.setNoDataMessage("No data to display");
         return chart;
 
+    }
+
+    private class Camembert extends ChartPanel {
+        public Camembert(JFreeChart chart) {
+            super(chart);
+        }
     }
 
 
