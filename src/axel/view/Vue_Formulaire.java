@@ -14,12 +14,14 @@ import java.util.ArrayList;
  * Created by axell on 01/12/15.
  */
 public class Vue_Formulaire extends JInternalFrame {
+    ///model
     private Promotion promotion;
 
-    // Controlleur
+    // Control
     private Contr_AjoutForm control_ajout;
     private Contr_SuppForm control_supp;
 
+    // Components
     private JLabel lblAdd, lblDelete;
     private JLabel lblNum1, lblPrenom, lblNom, lblBac, lblDpt, lblNum2;
     private JTextField txtNum1, txtNum2, txtPrenom, txtNom;

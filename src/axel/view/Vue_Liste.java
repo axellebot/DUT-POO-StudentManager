@@ -15,9 +15,12 @@ import java.util.ArrayList;
  * Created by axell on 01/12/15.
  */
 public class Vue_Liste extends JInternalFrame implements Observateur {
-    // Controleurs
-    Contr_SuppListe control_supp;
+    ///model
     private Promotion promotion;
+
+    // Control
+    private Contr_SuppListe control_supp;
+
     // Components
     private JScrollPane scrollPanel;
     private JList listbox;
@@ -28,7 +31,6 @@ public class Vue_Liste extends JInternalFrame implements Observateur {
 
         this.promotion = promotion;
 
-        this.btnDelete = new JButton("Supprimer");
 
         // Create some items to add to the list
         listbox = new JList(promotion.getListeEtudiants().toArray());
@@ -36,6 +38,7 @@ public class Vue_Liste extends JInternalFrame implements Observateur {
         // Create a scrollPanel to hold all other components
         scrollPanel = new JScrollPane(listbox);
 
+        this.btnDelete = new JButton("Supprimer");
 
         //Layout
         this.setLayout(new GridBagLayout());

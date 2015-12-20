@@ -49,6 +49,7 @@ public class Contr_AjoutForm extends AbstractControleur {
                 if (!existant) {
                     System.out.println("\nL'ID n'est pas déjà utilisé\n");
                     promotion.addEtudiant(new Etudiant(_id, _nom, _prenom, _bac, _dept));
+                    this.promotion.notifyObservateur();
                     JOptionPane.showMessageDialog(view,
                             "L'étudiant a été ajouté.",
                             "Information",

@@ -31,13 +31,11 @@ public class Promotion implements Observable {
     public void addEtudiant(Etudiant etu) {
         System.out.println("Ajout de : " + etu + "\n");
         list.add(etu);
-        this.notifyObservateur();
     }
 
     public void removeEtudiant(Etudiant etu) {
         System.out.println("Suppression de : " + etu + "\n");
         list.remove(etu);
-        this.notifyObservateur();
     }
 
     public ArrayList<Etudiant> getListeEtudiants() {

@@ -9,7 +9,10 @@ import java.awt.*;
  * Created by axell on 01/12/15.
  */
 public class Vue_Principal extends JFrame {
+    //model
     private Promotion promotion;
+
+    //Components
     private Vue_Formulaire vue_formulaire;
     private Vue_Histogramme vue_histogramme;
     private Vue_Camembert vue_camembert;

@@ -27,6 +27,7 @@ public class Contr_SuppForm extends AbstractControleur {
                 Etudiant etu = promotion.searchEtudiant(list.get(0));
                 if (etu != null) {
                     promotion.removeEtudiant(etu);
+                    this.promotion.notifyObservateur();
                     JOptionPane.showMessageDialog(view,
                             "L'étudiant '" + etu + "' a été supprimé.",
                             "Information",

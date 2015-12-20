@@ -29,6 +29,8 @@ public class Contr_SuppListe extends AbstractControleur {
                 promotion.removeEtudiant(etu);
                 all_etu += etu + "\n";
             }
+            this.promotion.notifyObservateur();
+
             if (list.size() < 2) {
                 System.out.println("L'étudiant :\n" + all_etu + " a été supprimé.");
                 JOptionPane.showMessageDialog(view,
@@ -42,6 +44,7 @@ public class Contr_SuppListe extends AbstractControleur {
                         "Information",
                         JOptionPane.INFORMATION_MESSAGE);
             }
+            this.promotion.notifyObservateur();
         } else {
             System.out.println("Aucun étudiant n'a été selectionné.");
             JOptionPane.showMessageDialog(view,
